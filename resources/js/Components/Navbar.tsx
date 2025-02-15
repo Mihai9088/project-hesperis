@@ -1,5 +1,6 @@
 import { Link, usePage } from "@inertiajs/react";
 import React from "react";
+import logo from "../Assets/logo.png";
 
 const Navbar = () => {
   const { auth } = usePage().props;
@@ -8,8 +9,12 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <Link href="/" className="btn btn-ghost text-xl">
-          Agora
+        <Link href="/" className="btn btn-ghost text-xl flex items-center">
+        <img 
+          src={logo} 
+          alt="Logo" 
+          className="h-[100px] w-auto object-contain pb-2" 
+        />
         </Link>
       </div>
       <div className="flex-none gap-4">
@@ -82,7 +87,9 @@ const Navbar = () => {
             <Link href={route("login")} className="btn">
               Login
             </Link>
-            <Link href={route('register')} className="btn btn-primary">Register</Link>
+            <Link href={route("register")} className="btn btn-primary">
+              Register
+            </Link>
           </>
         )}
       </div>
