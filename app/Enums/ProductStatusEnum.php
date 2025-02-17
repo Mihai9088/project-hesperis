@@ -19,7 +19,7 @@ enum ProductStatusEnum : string
     {
         return [
             'gray' => self::Draft->value,
-            'succes' => self::Published->value
+            'success' => self::Published->value
         ];
     }
 }
