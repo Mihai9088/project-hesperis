@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Category;
 use App\Models\VariationType;
+use App\Models\ProductVariation;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -19,9 +20,9 @@ class Product extends Model implements HasMedia
     {
         $this->addMediaConversion('thumb')
             ->width(100);
-            $this->addMediaConversion('small')->width(480);
+        $this->addMediaConversion('small')->width(480);
 
-            $this->addMediaConversion('large')->width(1200);
+        $this->addMediaConversion('large')->width(1200);
     }
     public function department(): BelongsTo
     {
@@ -36,5 +37,10 @@ class Product extends Model implements HasMedia
     public function variationTypes(): HasMany
     {
         return $this->hasMany(VariationType::class);
+    }
+
+    public function variations(): HasMany
+    {
+        return $this->hasMany(ProductVariation::class, 'product_id');
     }
 }
