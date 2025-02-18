@@ -1,6 +1,5 @@
 <?php
 
-use App\Services\CustomPathGenerator;
 
 return [
 
@@ -83,7 +82,7 @@ return [
     /*
      * The class that contains the strategy for determining a media file's path.
      */
-    'path_generator' => CustomPathGenerator::class,
+    'path_generator' => App\Services\CustomPathGenerator::class,
 
     /*
      * The class that contains the strategy for determining how to remove files.
